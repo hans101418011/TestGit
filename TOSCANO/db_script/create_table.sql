@@ -48,10 +48,11 @@ CREATE TABLE IF NOT EXISTS `member` (
   `sex` char(2) DEFAULT NULL COMMENT '性別',
   `address` varchar(160) DEFAULT NULL COMMENT '地址',
   `tel` varchar(16) DEFAULT NULL COMMENT '電話',
-  `mobileNumber` varchar(10) DEFAULT NULL COMMENT '手機號碼',
+  `mobileNumber` varchar(10) NOT NULL COMMENT '手機號碼',
   `birthday` date DEFAULT NULL COMMENT '生日',
   `records` varchar(100) DEFAULT NULL COMMENT '紀錄',
-  PRIMARY KEY (`No`)
+  PRIMARY KEY (`account`) USING BTREE,
+  KEY `No` (`No`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='會員資料表';
 
 -- 取消選取資料匯出。
